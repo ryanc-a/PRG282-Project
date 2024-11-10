@@ -32,7 +32,6 @@ namespace PRG281_Project
                 }
                 }
                 Console.WriteLine("File data has been loaded successfully");
-
             }
             else
             {
@@ -55,14 +54,12 @@ namespace PRG281_Project
                 }
                 Console.WriteLine("File has been updated");  
             }
-            
         }
 
         public void SaveSummary(string[] text)
         {
             File.WriteAllLines(path2, text);
             Console.WriteLine("File has been updated");
-
         }
 
         public string[] LoadSummary()

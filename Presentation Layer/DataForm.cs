@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using WMPLib;
 
 namespace PRG281_Project
 {
@@ -23,13 +24,15 @@ namespace PRG281_Project
             NameError.Visible = false;
             AgeError.Visible = false;
             CourseError.Visible = false;
-            checkData();
+            player.URL = "bgMusic.mp3";
         }
         File_Handler fh = new File_Handler();
         DataHandler dh = new DataHandler();
         List<Student> students = new List<Student>();
         BindingSource source = new BindingSource();
         List<Student> lastDel = new List<Student>();
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
+        bool playing = false;
 
         //adds a student to the current students
         private void Add_Student_Click(object sender, EventArgs e)
@@ -58,14 +61,14 @@ namespace PRG281_Project
                 ID.Text = "";
                 sName.Text = "";
                 Age.Text = "";
+                cbUpdateCourse.Text = "";
             }
             //Update display
             RefreashDisplay();
         }
         //displays the current students
         private void View_Student_Click(object sender, EventArgs e)
-        {
-            
+        {          
             //clears the students list so it is empty before recieving data
             students.Clear();
             //gets the data from the students file and stores it in the students list
@@ -74,8 +77,6 @@ namespace PRG281_Project
             source.DataSource = students;
             //sets the source for the datagrid to the binding source
             DataGrid.DataSource = source;
-            
-            //RefreashDisplay();
         }
         private void RefreashDisplay()
         {
@@ -136,6 +137,7 @@ namespace PRG281_Project
                 UpdateID.Text = "";
                 UpdateName.Text = "";
                 UpdateAge.Text = "";
+                cbUpdateCourse.Text = "";
             }
             //Update display
             RefreashDisplay();
@@ -172,8 +174,6 @@ namespace PRG281_Project
             { 
                 dh.DeleteStudent(students,deleteStudent);
                 lastDel.Add(deleteStudent);
-
-
             }
             //Update display
             RefreashDisplay();
@@ -240,8 +240,6 @@ namespace PRG281_Project
                 IDError.Visible = true;
                 IDUpError.Visible = true;
                 IDDelError.Visible = true;
-                IDUpError.ForeColor = Color.Red;
-                IDDelError.ForeColor = Color.Red;
                 ID.ForeColor = Color.Red;
                 IDError.Text = "please enter an id";
                 IDUpError.Text = "please enter an id";
@@ -252,8 +250,6 @@ namespace PRG281_Project
                 IDError.Visible = true;
                 IDUpError.Visible = true;
                 IDDelError.Visible = true;
-                IDUpError.ForeColor = Color.Red;
-                IDDelError.ForeColor = Color.Red;
                 ID.ForeColor = Color.Red;
                 IDError.Text = "This student ID is invalid";
                 IDUpError.Text = "This student ID is invalid";
@@ -369,12 +365,25 @@ namespace PRG281_Project
             DeleteID.Text = data[0];
             }
         }
-        //Gets the current selected cell from the grid
-        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //aadd musuc XD
+        private void DataForm_Load(object sender, EventArgs e)
         {
-            //readGrid();
+            player.controls.play();
+            playing = true;
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (playing)
+            {
+                player.controls.pause();
+                playing = false;
+            }
+            else
+            { 
+                player.controls.play();
+                playing = true;
+            }
+        }
     }
 }

@@ -81,6 +81,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -245,7 +247,6 @@
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.Size = new System.Drawing.Size(533, 268);
             this.DataGrid.TabIndex = 16;
-            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
             // 
             // tabPage2
             // 
@@ -294,7 +295,7 @@
             // 
             this.IDUpError.AutoSize = true;
             this.IDUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDUpError.ForeColor = System.Drawing.Color.White;
+            this.IDUpError.ForeColor = System.Drawing.Color.IndianRed;
             this.IDUpError.Location = new System.Drawing.Point(100, 62);
             this.IDUpError.Name = "IDUpError";
             this.IDUpError.Size = new System.Drawing.Size(57, 15);
@@ -351,7 +352,7 @@
             "BCOMP",
             "Degree"});
             this.cbUpdateCourse.Location = new System.Drawing.Point(103, 164);
-            this.cbUpdateCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbUpdateCourse.Margin = new System.Windows.Forms.Padding(4);
             this.cbUpdateCourse.Name = "cbUpdateCourse";
             this.cbUpdateCourse.Size = new System.Drawing.Size(185, 33);
             this.cbUpdateCourse.TabIndex = 36;
@@ -360,7 +361,7 @@
             // 
             this.CourseUpError.AutoSize = true;
             this.CourseUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseUpError.ForeColor = System.Drawing.Color.White;
+            this.CourseUpError.ForeColor = System.Drawing.Color.IndianRed;
             this.CourseUpError.Location = new System.Drawing.Point(100, 208);
             this.CourseUpError.Name = "CourseUpError";
             this.CourseUpError.Size = new System.Drawing.Size(88, 15);
@@ -371,7 +372,7 @@
             // 
             this.AgeUpError.AutoSize = true;
             this.AgeUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeUpError.ForeColor = System.Drawing.Color.White;
+            this.AgeUpError.ForeColor = System.Drawing.Color.IndianRed;
             this.AgeUpError.Location = new System.Drawing.Point(100, 142);
             this.AgeUpError.Name = "AgeUpError";
             this.AgeUpError.Size = new System.Drawing.Size(67, 15);
@@ -382,7 +383,7 @@
             // 
             this.NameUpError.AutoSize = true;
             this.NameUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameUpError.ForeColor = System.Drawing.Color.White;
+            this.NameUpError.ForeColor = System.Drawing.Color.IndianRed;
             this.NameUpError.Location = new System.Drawing.Point(100, 92);
             this.NameUpError.Name = "NameUpError";
             this.NameUpError.Size = new System.Drawing.Size(81, 15);
@@ -472,7 +473,7 @@
             "BCOMP",
             "Degree"});
             this.cbCourse.Location = new System.Drawing.Point(129, 240);
-            this.cbCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCourse.Margin = new System.Windows.Forms.Padding(4);
             this.cbCourse.Name = "cbCourse";
             this.cbCourse.Size = new System.Drawing.Size(185, 28);
             this.cbCourse.TabIndex = 35;
@@ -481,7 +482,7 @@
             // 
             this.CourseError.AutoSize = true;
             this.CourseError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseError.ForeColor = System.Drawing.Color.White;
+            this.CourseError.ForeColor = System.Drawing.Color.IndianRed;
             this.CourseError.Location = new System.Drawing.Point(125, 278);
             this.CourseError.Name = "CourseError";
             this.CourseError.Size = new System.Drawing.Size(88, 15);
@@ -492,7 +493,7 @@
             // 
             this.AgeError.AutoSize = true;
             this.AgeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeError.ForeColor = System.Drawing.Color.White;
+            this.AgeError.ForeColor = System.Drawing.Color.IndianRed;
             this.AgeError.Location = new System.Drawing.Point(125, 209);
             this.AgeError.Name = "AgeError";
             this.AgeError.Size = new System.Drawing.Size(67, 15);
@@ -503,7 +504,7 @@
             // 
             this.NameError.AutoSize = true;
             this.NameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameError.ForeColor = System.Drawing.Color.White;
+            this.NameError.ForeColor = System.Drawing.Color.IndianRed;
             this.NameError.Location = new System.Drawing.Point(125, 150);
             this.NameError.Name = "NameError";
             this.NameError.Size = new System.Drawing.Size(81, 15);
@@ -514,7 +515,7 @@
             // 
             this.IDError.AutoSize = true;
             this.IDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDError.ForeColor = System.Drawing.Color.White;
+            this.IDError.ForeColor = System.Drawing.Color.IndianRed;
             this.IDError.Location = new System.Drawing.Point(125, 100);
             this.IDError.Name = "IDError";
             this.IDError.Size = new System.Drawing.Size(57, 15);
@@ -567,7 +568,7 @@
             // 
             this.IDDelError.AutoSize = true;
             this.IDDelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDDelError.ForeColor = System.Drawing.Color.White;
+            this.IDDelError.ForeColor = System.Drawing.Color.IndianRed;
             this.IDDelError.Location = new System.Drawing.Point(132, 159);
             this.IDDelError.Name = "IDDelError";
             this.IDDelError.Size = new System.Drawing.Size(57, 15);
@@ -722,6 +723,26 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.button5_Click);
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 540);
+            this.splitter1.TabIndex = 35;
+            this.splitter1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(766, 501);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 39);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Music(on/off)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -730,6 +751,8 @@
             this.BackgroundImage = global::PRG281_Project.Properties.Resources.BubbleBlack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1016, 540);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnNext);
@@ -741,6 +764,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DataForm";
             this.Text = "DataForm";
+            this.Load += new System.EventHandler(this.DataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -814,5 +838,7 @@
         private System.Windows.Forms.Button btnUndoDelete;
         private System.Windows.Forms.ComboBox cbCourse;
         private System.Windows.Forms.ComboBox cbUpdateCourse;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -130,19 +130,16 @@ namespace PRG281_Project
                 if (cStudent.Student_Name.Length > 25)
                 {
                     invalidName = true;
-                    //MessageBox.Show("This student has a name with too many charecters, please shorten it");
                 }
                 //checks if age is valid
                 if (cStudent.Student_Age < 18 || cStudent.Student_Age > 50)
                 {
                     invalidAge = true;
-                    //MessageBox.Show("This student age is below the minumum");
                 }
                 //checks if the course is valid
                 if (cStudent.Course == "BIT" || cStudent.Course == "BCOMP" || cStudent.Course == "Degree")
                 {
                     invalidCourse = false;
-                    //MessageBox.Show("This student does not have a valid course");
                 }
             }
             return cStudent;
@@ -158,7 +155,6 @@ namespace PRG281_Project
                 if (student.Student_ID == cStudent)
                 {
                     invalidID = false;
-                    //MessageBox.Show("This student ID does not exists, please input a valid id");
                     break;
                 }
             }
