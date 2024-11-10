@@ -13,18 +13,18 @@ C:\Users\Yoshi\source\repos\PRG281_Project\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Yoshi\source\repos\PRG281_Project\obj\Debug\Interop.WMPLib.dll
 C:\Users\Yoshi\source\repos\PRG281_Project\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Yoshi\source\repos\PRG281_Project\obj\Debug\PRG281_Project.csproj.ResolveComReference.cache
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\bin\Debug\PRG281_Project.exe.config
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\bin\Debug\PRG281_Project.exe
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\bin\Debug\PRG281_Project.pdb
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\bin\Debug\Interop.WMPLib.dll
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.csproj.AssemblyReference.cache
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\Interop.WMPLib.dll
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\AxInterop.WMPLib.dll
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.csproj.ResolveComReference.cache
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.DataForm.resources
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.Properties.Resources.resources
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.csproj.GenerateResource.cache
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.csproj.CoreCompileInputs.cache
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.exe
-C:\Users\ryanc\OneDrive\Desktop\Desktop\PRG281_Project Finally\obj\Debug\PRG281_Project.pdb
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.csproj.AssemblyReference.cache
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.csproj.ResolveComReference.cache
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.DataForm.resources
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.Properties.Resources.resources
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.csproj.GenerateResource.cache
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.csproj.CoreCompileInputs.cache
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.exe
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\PRG281_Project.pdb
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\bin\Debug\PRG281_Project.exe.config
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\bin\Debug\PRG281_Project.exe
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\bin\Debug\PRG281_Project.pdb
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\bin\Debug\Interop.WMPLib.dll
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\ryanc\OneDrive\Desktop\PRG281_Project\obj\Debug\Interop.WMPLib.dll

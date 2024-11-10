@@ -170,7 +170,10 @@ namespace PRG281_Project
             }
             //checking if student is valid
             dh.CheckValidDelete(students, searchID);
-            if(checkData()) 
+            //confirm validation
+            int confirm = (int) MessageBox.Show("Are you sure you would like to delete a student?","Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //only delete if valid and confirmed yes
+            if(checkData() && confirm==6) 
             { 
                 dh.DeleteStudent(students,deleteStudent);
                 lastDel.Add(deleteStudent);
@@ -365,7 +368,7 @@ namespace PRG281_Project
             DeleteID.Text = data[0];
             }
         }
-        //aadd musuc XD
+        //add musuc XD
         private void DataForm_Load(object sender, EventArgs e)
         {
             player.controls.play();
