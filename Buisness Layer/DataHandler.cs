@@ -23,6 +23,7 @@ namespace PRG281_Project
             students.Add(newStudent);
             Console.WriteLine("Saving new student to storage...");
             handler.SaveStudents(students);
+
         }
         //updates a student
         public void UpdateStudent(List<Student> students, Student oldStudent, Student updatedStudent)
@@ -45,6 +46,7 @@ namespace PRG281_Project
         {
             students.Remove(deleteStudent);
             handler.SaveStudents(students);
+
         }
         //generate summary of average age and total students
         public void GenerateSummary(List<Student> students)
@@ -105,28 +107,36 @@ namespace PRG281_Project
                     }
                 }
                 //checks if id is valid
-                if (cStudent.Student_Name == "" ) 
+                if (cStudent.Student_ID == 0)
                 {
-                    invalidName = true;
+                    emptyID= true;
                 }
                 //checks of age is valid
-
-                //checks if cource is valid
-                if(cStudent.Course == "")
+                if (cStudent.Student_Name == "" ) 
                 {
-                    invalidCourse = true;
+                    emptyName = true;
+                }
+                //checks of age is valid
+                if (cStudent.Student_Age == 0)
+                {
+                    emptyAge = true;
+                }
+                //checks if cource is valid
+                if (cStudent.Course == "")
+                {
+                    emptyCourse = true;
                 }
                 //checks if the name is too long
                 if (cStudent.Student_Name.Length > 25)
                 {
                     invalidName = true;
-                    MessageBox.Show("This student has a name with too many charecters, please shorten it");
+                    //MessageBox.Show("This student has a name with too many charecters, please shorten it");
                 }
                 //checks if age is valid
-                if (cStudent.Student_Age < 18)
+                if (cStudent.Student_Age < 18 || cStudent.Student_Age > 50)
                 {
                     invalidAge = true;
-                    MessageBox.Show("This student age is below the minumum");
+                    //MessageBox.Show("This student age is below the minumum");
                 }
                 //checks if the course is valid
                 if (cStudent.Course == "BIT" || cStudent.Course == "BCOMP" || cStudent.Course == "Degree")
@@ -154,7 +164,19 @@ namespace PRG281_Project
             }
             return cStudent;
         }
-
-
+        //search for student (move to dh)
+        public Student searchStudent(List<Student> students, int searchID) 
+        {
+            Student result = null;
+            foreach (Student student in students)
+            {
+                if (student.Student_ID == searchID)
+                {
+                    result = student;
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }

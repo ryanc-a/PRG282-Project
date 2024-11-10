@@ -23,12 +23,13 @@ namespace PRG281_Project
             NameError.Visible = false;
             AgeError.Visible = false;
             CourseError.Visible = false;
+            checkData();
         }
         File_Handler fh = new File_Handler();
         DataHandler dh = new DataHandler();
         List<Student> students = new List<Student>();
         BindingSource source = new BindingSource();
-        Student lastDel = null;
+        List<Student> lastDel = new List<Student>();
 
         //adds a student to the current students
         private void Add_Student_Click(object sender, EventArgs e)
@@ -47,22 +48,42 @@ namespace PRG281_Project
             {
                 dh.invalidAge = true;
             }
-            course = Course.Text;
+            course = cbCourse.Text;
             //checking if student is valid
             dh.CheckValidAdd(students, new Student(id, name, age, course),"add");
             if (checkData())
             {
                 //adds student to list
                 dh.AddStudent(students, new Student(id, name, age, course));
+                ID.Text = "";
+                sName.Text = "";
+                Age.Text = "";
             }
             //Update display
-            DataGrid.DataSource = students;
+            RefreashDisplay();
         }
         //displays the current students
         private void View_Student_Click(object sender, EventArgs e)
         {
+            
             //clears the students list so it is empty before recieving data
             students.Clear();
+            //gets the data from the students file and stores it in the students list
+            students = fh.GetStudents();
+            //sets the data source of the binding source to the stdents list
+            source.DataSource = students;
+            //sets the source for the datagrid to the binding source
+            DataGrid.DataSource = source;
+            
+            //RefreashDisplay();
+        }
+        private void RefreashDisplay()
+        {
+            //Update display
+            //clears the students list so it is empty before recieving data
+            students.Clear();
+            source.Clear();
+            source = new BindingSource();
             //gets the data from the students file and stores it in the students list
             students = fh.GetStudents();
             //sets the data source of the binding source to the stdents list
@@ -75,36 +96,51 @@ namespace PRG281_Project
         {
             int searchID = 0;
             string name;
-            int age;
+            int age = 0;
             string course;
             Student oldStudent = null;
             //getting values from form
-            searchID = int.Parse(UpdateID.Text);
+            int.TryParse(UpdateID.Text,out searchID);
             name = UpdateName.Text;
-            age = int.Parse(UpdateAge.Text);
-            course = UpdateCourse.Text;
-            //search for student (move to dh)
-            foreach (Student student in students)
-            {
-                if (student.Student_ID == searchID)
-                {
-                    oldStudent = student;
-                    break;
-                }
+            int.TryParse(UpdateAge.Text, out age);
+            course = cbUpdateCourse.Text;
+            //search for student 
+            if(searchID != 0) 
+            { 
+            oldStudent = dh.searchStudent(students, searchID);
             }
             if(oldStudent == null) 
             {
                 Console.WriteLine("Invalid ID");
+            }
+            else 
+            { 
+            if (name=="")
+            {
+                name =oldStudent.Student_Name;
+            }
+            if (age == 0)
+            {
+                age = oldStudent.Student_Age;
+            }
+            if (course =="")
+            {
+                course = oldStudent.Course;
+            }
             }
             //checking if student is valid
             dh.CheckValidAdd(students, new Student(searchID, name, age, course), "update");
             if (checkData())
             {
                 dh.UpdateStudent(students, oldStudent, new Student(searchID, name, age, course));
+                UpdateID.Text = "";
+                UpdateName.Text = "";
+                UpdateAge.Text = "";
             }
             //Update display
-            DataGrid.DataSource = students;
+            RefreashDisplay();
         }
+
         //generates a summary report
         private void Generate_Summary_Click(object sender, EventArgs e)
         {
@@ -120,15 +156,11 @@ namespace PRG281_Project
         {
             int searchID = 0;
             Student deleteStudent = null;
-            searchID = int.Parse(DeleteID.Text);
-            //finds the searched student (move to dh)
-            foreach (Student student in students)
+            int.TryParse(DeleteID.Text, out searchID);
+            //finds the searched student 
+            if (searchID != 0)
             {
-                if (student.Student_ID == searchID)
-                {
-                    deleteStudent = student;
-                    break;
-                }
+                deleteStudent = dh.searchStudent(students, searchID);
             }
             if (deleteStudent == null)
             {
@@ -139,16 +171,26 @@ namespace PRG281_Project
             if(checkData()) 
             { 
                 dh.DeleteStudent(students,deleteStudent);
-                lastDel = deleteStudent;
+                lastDel.Add(deleteStudent);
+
+
             }
             //Update display
-            DataGrid.DataSource = students;
+            RefreashDisplay();
         }
         //undoes the lat delete operation
         private void btnUndoDelete_Click(object sender, EventArgs e)
         {
-            dh.AddStudent(students, lastDel);
+            if(lastDel.Count() > 0) { 
+            //undoes delete
+            dh.AddStudent(students, lastDel.Last());
+            //removes the undone student
+            lastDel.Remove(lastDel.Last());
+
+            }
+                RefreashDisplay();
         }
+
         //exits the program
         private void button5_Click(object sender, EventArgs e)
         {
@@ -183,8 +225,8 @@ namespace PRG281_Project
             UpdateName.ForeColor = Color.Black;
             Age.ForeColor = Color.Black;
             UpdateAge.ForeColor = Color.Black;
-            Course.ForeColor = Color.Black;
-            UpdateCourse.ForeColor = Color.Black;
+            cbCourse.ForeColor = Color.Black;
+            cbUpdateCourse.ForeColor = Color.Black;
             //displays error messages
             if (dh.duplicateID)
             {
@@ -197,7 +239,9 @@ namespace PRG281_Project
             {
                 IDError.Visible = true;
                 IDUpError.Visible = true;
+                IDDelError.Visible = true;
                 IDUpError.ForeColor = Color.Red;
+                IDDelError.ForeColor = Color.Red;
                 ID.ForeColor = Color.Red;
                 IDError.Text = "please enter an id";
                 IDUpError.Text = "please enter an id";
@@ -213,7 +257,7 @@ namespace PRG281_Project
                 ID.ForeColor = Color.Red;
                 IDError.Text = "This student ID is invalid";
                 IDUpError.Text = "This student ID is invalid";
-                DeleteID.Text = "This student ID is invalid";
+                IDDelError.Text = "This student ID is invalid";
                 valid = false;
             }
             if (dh.invalidName)
@@ -242,8 +286,8 @@ namespace PRG281_Project
                 AgeUpError.Visible = true;
                 Age.ForeColor = Color.Red;
                 UpdateAge.ForeColor = Color.Red;
-                AgeError.Text = "age must be above 18";
-                AgeUpError.Text = "age must be above 18";
+                AgeError.Text = "age must be above 18 and below 50";
+                AgeUpError.Text = "age must be above 18 and below 50";
                 valid = false;
             }
             if (dh.emptyAge)
@@ -260,8 +304,8 @@ namespace PRG281_Project
             {
                 CourseError.Visible = true;
                 CourseUpError.Visible = true;
-                Course.ForeColor = Color.Red;
-                UpdateCourse.ForeColor = Color.Red;
+                cbCourse.ForeColor = Color.Red;
+                cbUpdateCourse.ForeColor = Color.Red;
                 CourseError.Text = "course must be valid";
                 CourseUpError.Text = "course must be valid";
                 valid = false;
@@ -270,8 +314,8 @@ namespace PRG281_Project
             {
                 CourseError.Visible = true;
                 CourseUpError.Visible = true;
-                Course.ForeColor = Color.Red;
-                UpdateCourse.ForeColor = Color.Red;
+                cbCourse.ForeColor = Color.Red;
+                cbUpdateCourse.ForeColor = Color.Red;
                 CourseError.Text = "please select a course";
                 CourseUpError.Text = "please select a course";
                 valid = false;
@@ -315,12 +359,12 @@ namespace PRG281_Project
             ID.Text = data[0];
             sName.Text = data[1];
             Age.Text = data[2];
-            Course.Text = data[3];
+            cbCourse.Text = data[3];
             //for the update tab
             UpdateID.Text = data[0];
             UpdateName.Text = data[1];
             UpdateAge.Text = data[2];
-            UpdateCourse.Text = data[3];
+            cbUpdateCourse.Text = data[3];
             //for the delete tab
             DeleteID.Text = data[0];
             }
@@ -328,7 +372,7 @@ namespace PRG281_Project
         //Gets the current selected cell from the grid
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            readGrid();
+            //readGrid();
         }
 
 

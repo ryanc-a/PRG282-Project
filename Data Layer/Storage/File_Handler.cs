@@ -23,24 +23,16 @@ namespace PRG281_Project
             string[] arr;
             if (File.Exists(path))
             {
-                //studentText = File.ReadAllLines(path).ToList();
                 using(TextReader reader = File.OpenText(path))
                 {
                     string line;
                     while ((line = reader.ReadLine() )!= null) {
                         arr = line.Split(',');
                         students.Add(new Student(int.Parse(arr[0]), arr[1],int.Parse(arr[2]), arr[3]));
-                        //studentText.Add(reader.ReadLine());
                 }
                 }
                 Console.WriteLine("File data has been loaded successfully");
-                /*
-                foreach (string line in studentText)
-                {
-                    arr = line.Split(',');
-                    students.Add(new Student(int.Parse(arr[0]), arr[1], arr[2], arr[3]));
-                }   
-                */
+
             }
             else
             {
@@ -55,7 +47,6 @@ namespace PRG281_Project
             {
                 studentText.Add(student.ToString());
             }
-            //File.WriteAllLines(path, studentText);
             using (StreamWriter writer = File.CreateText(path))
             {
                 foreach (string line in studentText)

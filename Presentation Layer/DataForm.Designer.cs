@@ -33,7 +33,6 @@
             this.Generate_Summary = new System.Windows.Forms.Button();
             this.Delete_Student = new System.Windows.Forms.Button();
             this.View_Student = new System.Windows.Forms.Button();
-            this.Course = new System.Windows.Forms.TextBox();
             this.Age = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,22 +45,29 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.IDUpError = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UpdateID = new System.Windows.Forms.TextBox();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.cbUpdateCourse = new System.Windows.Forms.ComboBox();
+            this.CourseUpError = new System.Windows.Forms.Label();
+            this.AgeUpError = new System.Windows.Forms.Label();
+            this.NameUpError = new System.Windows.Forms.Label();
             this.UpdateName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.UpdateAge = new System.Windows.Forms.TextBox();
-            this.UpdateCourse = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbCourse = new System.Windows.Forms.ComboBox();
             this.CourseError = new System.Windows.Forms.Label();
             this.AgeError = new System.Windows.Forms.Label();
             this.NameError = new System.Windows.Forms.Label();
             this.IDError = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnUndoDelete = new System.Windows.Forms.Button();
+            this.IDDelError = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.DeleteID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,12 +81,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.IDUpError = new System.Windows.Forms.Label();
-            this.IDDelError = new System.Windows.Forms.Label();
-            this.NameUpError = new System.Windows.Forms.Label();
-            this.AgeUpError = new System.Windows.Forms.Label();
-            this.CourseUpError = new System.Windows.Forms.Label();
-            this.btnUndoDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,8 +96,9 @@
             this.Add_Student.AccessibleName = "";
             this.Add_Student.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_Student.Location = new System.Drawing.Point(104, 314);
+            this.Add_Student.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Add_Student.Name = "Add_Student";
-            this.Add_Student.Size = new System.Drawing.Size(139, 35);
+            this.Add_Student.Size = new System.Drawing.Size(139, 34);
             this.Add_Student.TabIndex = 31;
             this.Add_Student.Text = "Add Student";
             this.Add_Student.UseVisualStyleBackColor = true;
@@ -107,9 +108,10 @@
             // 
             this.Update_Student.AccessibleName = "";
             this.Update_Student.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Student.Location = new System.Drawing.Point(118, 340);
+            this.Update_Student.Location = new System.Drawing.Point(144, 377);
+            this.Update_Student.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Update_Student.Name = "Update_Student";
-            this.Update_Student.Size = new System.Drawing.Size(139, 35);
+            this.Update_Student.Size = new System.Drawing.Size(139, 34);
             this.Update_Student.TabIndex = 30;
             this.Update_Student.Text = "Update Student";
             this.Update_Student.UseVisualStyleBackColor = true;
@@ -118,7 +120,8 @@
             // Generate_Summary
             // 
             this.Generate_Summary.AccessibleName = "";
-            this.Generate_Summary.Location = new System.Drawing.Point(94, 305);
+            this.Generate_Summary.Location = new System.Drawing.Point(93, 305);
+            this.Generate_Summary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Generate_Summary.Name = "Generate_Summary";
             this.Generate_Summary.Size = new System.Drawing.Size(164, 42);
             this.Generate_Summary.TabIndex = 28;
@@ -130,8 +133,9 @@
             // 
             this.Delete_Student.AccessibleName = "";
             this.Delete_Student.Location = new System.Drawing.Point(135, 258);
+            this.Delete_Student.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Delete_Student.Name = "Delete_Student";
-            this.Delete_Student.Size = new System.Drawing.Size(105, 35);
+            this.Delete_Student.Size = new System.Drawing.Size(105, 34);
             this.Delete_Student.TabIndex = 27;
             this.Delete_Student.Text = "Delete Student";
             this.Delete_Student.UseVisualStyleBackColor = true;
@@ -141,7 +145,8 @@
             // 
             this.View_Student.AccessibleName = "";
             this.View_Student.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_Student.Location = new System.Drawing.Point(646, 369);
+            this.View_Student.Location = new System.Drawing.Point(645, 369);
+            this.View_Student.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.View_Student.Name = "View_Student";
             this.View_Student.Size = new System.Drawing.Size(121, 33);
             this.View_Student.TabIndex = 26;
@@ -149,18 +154,11 @@
             this.View_Student.UseVisualStyleBackColor = true;
             this.View_Student.Click += new System.EventHandler(this.View_Student_Click);
             // 
-            // Course
-            // 
-            this.Course.AccessibleName = "";
-            this.Course.Location = new System.Drawing.Point(128, 241);
-            this.Course.Name = "Course";
-            this.Course.Size = new System.Drawing.Size(187, 26);
-            this.Course.TabIndex = 25;
-            // 
             // Age
             // 
             this.Age.AccessibleName = "";
-            this.Age.Location = new System.Drawing.Point(128, 184);
+            this.Age.Location = new System.Drawing.Point(128, 185);
+            this.Age.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Age.Name = "Age";
             this.Age.Size = new System.Drawing.Size(187, 26);
             this.Age.TabIndex = 24;
@@ -169,6 +167,7 @@
             // 
             this.ID.AccessibleName = "";
             this.ID.Location = new System.Drawing.Point(128, 75);
+            this.ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(187, 26);
             this.ID.TabIndex = 23;
@@ -178,7 +177,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(67, 77);
+            this.label5.Location = new System.Drawing.Point(67, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 20);
             this.label5.TabIndex = 22;
@@ -189,7 +188,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 241);
+            this.label4.Location = new System.Drawing.Point(27, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 21;
@@ -200,7 +199,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(54, 186);
+            this.label3.Location = new System.Drawing.Point(53, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 20;
@@ -211,7 +210,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 125);
+            this.label2.Location = new System.Drawing.Point(37, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 19;
@@ -220,7 +219,8 @@
             // sName
             // 
             this.sName.AccessibleName = "";
-            this.sName.Location = new System.Drawing.Point(128, 125);
+            this.sName.Location = new System.Drawing.Point(128, 126);
+            this.sName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sName.Name = "sName";
             this.sName.Size = new System.Drawing.Size(187, 26);
             this.sName.TabIndex = 18;
@@ -240,6 +240,7 @@
             // 
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Location = new System.Drawing.Point(447, 57);
+            this.DataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.RowHeadersWidth = 51;
             this.DataGrid.Size = new System.Drawing.Size(533, 268);
@@ -255,9 +256,10 @@
             this.tabPage2.Controls.Add(this.Update_Student);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(410, 391);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(411, 429);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update Student";
             // 
@@ -266,7 +268,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(53, 3);
+            this.label13.Location = new System.Drawing.Point(53, 2);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(232, 20);
             this.label13.TabIndex = 33;
@@ -280,17 +282,30 @@
             this.groupBox1.Controls.Add(this.UpdateID);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(41, 33);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(328, 76);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ID of student to update";
             // 
+            // IDUpError
+            // 
+            this.IDUpError.AutoSize = true;
+            this.IDUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDUpError.ForeColor = System.Drawing.Color.White;
+            this.IDUpError.Location = new System.Drawing.Point(100, 62);
+            this.IDUpError.Name = "IDUpError";
+            this.IDUpError.Size = new System.Drawing.Size(57, 15);
+            this.IDUpError.TabIndex = 33;
+            this.IDUpError.Text = "ID Error";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 36);
+            this.label6.Location = new System.Drawing.Point(35, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 20);
             this.label6.TabIndex = 26;
@@ -300,6 +315,7 @@
             // 
             this.UpdateID.AccessibleName = "";
             this.UpdateID.Location = new System.Drawing.Point(103, 33);
+            this.UpdateID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateID.Name = "UpdateID";
             this.UpdateID.Size = new System.Drawing.Size(187, 30);
             this.UpdateID.TabIndex = 25;
@@ -307,27 +323,77 @@
             // gb1
             // 
             this.gb1.BackColor = System.Drawing.Color.LightGray;
+            this.gb1.Controls.Add(this.cbUpdateCourse);
             this.gb1.Controls.Add(this.CourseUpError);
             this.gb1.Controls.Add(this.AgeUpError);
             this.gb1.Controls.Add(this.NameUpError);
             this.gb1.Controls.Add(this.UpdateName);
             this.gb1.Controls.Add(this.label8);
             this.gb1.Controls.Add(this.UpdateAge);
-            this.gb1.Controls.Add(this.UpdateCourse);
             this.gb1.Controls.Add(this.label9);
             this.gb1.Controls.Add(this.label10);
             this.gb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb1.Location = new System.Drawing.Point(41, 115);
+            this.gb1.Location = new System.Drawing.Point(41, 116);
+            this.gb1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gb1.Name = "gb1";
-            this.gb1.Size = new System.Drawing.Size(328, 219);
+            this.gb1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gb1.Size = new System.Drawing.Size(328, 231);
             this.gb1.TabIndex = 31;
             this.gb1.TabStop = false;
             this.gb1.Text = "Details To Update";
+            // 
+            // cbUpdateCourse
+            // 
+            this.cbUpdateCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUpdateCourse.FormattingEnabled = true;
+            this.cbUpdateCourse.Items.AddRange(new object[] {
+            "BIT",
+            "BCOMP",
+            "Degree"});
+            this.cbUpdateCourse.Location = new System.Drawing.Point(103, 164);
+            this.cbUpdateCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbUpdateCourse.Name = "cbUpdateCourse";
+            this.cbUpdateCourse.Size = new System.Drawing.Size(185, 33);
+            this.cbUpdateCourse.TabIndex = 36;
+            // 
+            // CourseUpError
+            // 
+            this.CourseUpError.AutoSize = true;
+            this.CourseUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CourseUpError.ForeColor = System.Drawing.Color.White;
+            this.CourseUpError.Location = new System.Drawing.Point(100, 208);
+            this.CourseUpError.Name = "CourseUpError";
+            this.CourseUpError.Size = new System.Drawing.Size(88, 15);
+            this.CourseUpError.TabIndex = 41;
+            this.CourseUpError.Text = "Course Error";
+            // 
+            // AgeUpError
+            // 
+            this.AgeUpError.AutoSize = true;
+            this.AgeUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgeUpError.ForeColor = System.Drawing.Color.White;
+            this.AgeUpError.Location = new System.Drawing.Point(100, 142);
+            this.AgeUpError.Name = "AgeUpError";
+            this.AgeUpError.Size = new System.Drawing.Size(67, 15);
+            this.AgeUpError.TabIndex = 40;
+            this.AgeUpError.Text = "Age Error";
+            // 
+            // NameUpError
+            // 
+            this.NameUpError.AutoSize = true;
+            this.NameUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameUpError.ForeColor = System.Drawing.Color.White;
+            this.NameUpError.Location = new System.Drawing.Point(100, 92);
+            this.NameUpError.Name = "NameUpError";
+            this.NameUpError.Size = new System.Drawing.Size(81, 15);
+            this.NameUpError.TabIndex = 39;
+            this.NameUpError.Text = "Name Error";
             // 
             // UpdateName
             // 
             this.UpdateName.AccessibleName = "";
             this.UpdateName.Location = new System.Drawing.Point(103, 59);
+            this.UpdateName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateName.Name = "UpdateName";
             this.UpdateName.Size = new System.Drawing.Size(187, 30);
             this.UpdateName.TabIndex = 31;
@@ -345,24 +411,17 @@
             // UpdateAge
             // 
             this.UpdateAge.AccessibleName = "";
-            this.UpdateAge.Location = new System.Drawing.Point(103, 109);
+            this.UpdateAge.Location = new System.Drawing.Point(103, 110);
+            this.UpdateAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateAge.Name = "UpdateAge";
             this.UpdateAge.Size = new System.Drawing.Size(187, 30);
             this.UpdateAge.TabIndex = 37;
-            // 
-            // UpdateCourse
-            // 
-            this.UpdateCourse.AccessibleName = "";
-            this.UpdateCourse.Location = new System.Drawing.Point(103, 159);
-            this.UpdateCourse.Name = "UpdateCourse";
-            this.UpdateCourse.Size = new System.Drawing.Size(187, 30);
-            this.UpdateCourse.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(37, 109);
+            this.label9.Location = new System.Drawing.Point(37, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 20);
             this.label9.TabIndex = 33;
@@ -381,6 +440,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabPage1.Controls.Add(this.cbCourse);
             this.tabPage1.Controls.Add(this.CourseError);
             this.tabPage1.Controls.Add(this.AgeError);
             this.tabPage1.Controls.Add(this.NameError);
@@ -393,22 +453,36 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.Course);
             this.tabPage1.Controls.Add(this.Age);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(410, 391);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(411, 429);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Student";
+            // 
+            // cbCourse
+            // 
+            this.cbCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCourse.FormattingEnabled = true;
+            this.cbCourse.Items.AddRange(new object[] {
+            "BIT",
+            "BCOMP",
+            "Degree"});
+            this.cbCourse.Location = new System.Drawing.Point(129, 240);
+            this.cbCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCourse.Name = "cbCourse";
+            this.cbCourse.Size = new System.Drawing.Size(185, 28);
+            this.cbCourse.TabIndex = 35;
             // 
             // CourseError
             // 
             this.CourseError.AutoSize = true;
             this.CourseError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CourseError.ForeColor = System.Drawing.Color.White;
-            this.CourseError.Location = new System.Drawing.Point(125, 266);
+            this.CourseError.Location = new System.Drawing.Point(125, 278);
             this.CourseError.Name = "CourseError";
             this.CourseError.Size = new System.Drawing.Size(88, 15);
             this.CourseError.TabIndex = 35;
@@ -454,9 +528,10 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 57);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(418, 420);
+            this.tabControl1.Size = new System.Drawing.Size(419, 458);
             this.tabControl1.TabIndex = 29;
             // 
             // tabPage3
@@ -470,10 +545,34 @@
             this.tabPage3.Controls.Add(this.Delete_Student);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(410, 391);
+            this.tabPage3.Size = new System.Drawing.Size(411, 429);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete Student";
+            // 
+            // btnUndoDelete
+            // 
+            this.btnUndoDelete.AccessibleName = "";
+            this.btnUndoDelete.Location = new System.Drawing.Point(260, 258);
+            this.btnUndoDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUndoDelete.Name = "btnUndoDelete";
+            this.btnUndoDelete.Size = new System.Drawing.Size(105, 34);
+            this.btnUndoDelete.TabIndex = 35;
+            this.btnUndoDelete.Text = "Undo ";
+            this.btnUndoDelete.UseVisualStyleBackColor = true;
+            this.btnUndoDelete.Click += new System.EventHandler(this.btnUndoDelete_Click);
+            // 
+            // IDDelError
+            // 
+            this.IDDelError.AutoSize = true;
+            this.IDDelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDDelError.ForeColor = System.Drawing.Color.White;
+            this.IDDelError.Location = new System.Drawing.Point(132, 159);
+            this.IDDelError.Name = "IDDelError";
+            this.IDDelError.Size = new System.Drawing.Size(57, 15);
+            this.IDDelError.TabIndex = 34;
+            this.IDDelError.Text = "ID Error";
             // 
             // label14
             // 
@@ -490,8 +589,9 @@
             // 
             this.DeleteID.AccessibleName = "";
             this.DeleteID.Location = new System.Drawing.Point(135, 130);
+            this.DeleteID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteID.Name = "DeleteID";
-            this.DeleteID.Size = new System.Drawing.Size(230, 26);
+            this.DeleteID.Size = new System.Drawing.Size(231, 26);
             this.DeleteID.TabIndex = 27;
             // 
             // label7
@@ -514,9 +614,10 @@
             this.tabPage4.Controls.Add(this.Generate_Summary);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(410, 391);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Size = new System.Drawing.Size(411, 429);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Summary";
             // 
@@ -524,6 +625,7 @@
             // 
             this.AverageAge.AccessibleName = "";
             this.AverageAge.Location = new System.Drawing.Point(71, 214);
+            this.AverageAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AverageAge.Name = "AverageAge";
             this.AverageAge.ReadOnly = true;
             this.AverageAge.Size = new System.Drawing.Size(187, 26);
@@ -533,6 +635,7 @@
             // 
             this.TotalStudents.AccessibleName = "";
             this.TotalStudents.Location = new System.Drawing.Point(72, 128);
+            this.TotalStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TotalStudents.Name = "TotalStudents";
             this.TotalStudents.ReadOnly = true;
             this.TotalStudents.Size = new System.Drawing.Size(187, 26);
@@ -552,7 +655,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(69, 83);
+            this.label11.Location = new System.Drawing.Point(69, 82);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(131, 20);
             this.label11.TabIndex = 29;
@@ -562,8 +665,9 @@
             // 
             this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.Location = new System.Drawing.Point(447, 433);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(115, 40);
+            this.btnFirst.Size = new System.Drawing.Size(115, 39);
             this.btnFirst.TabIndex = 30;
             this.btnFirst.Text = "First";
             this.btnFirst.UseVisualStyleBackColor = true;
@@ -573,8 +677,9 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.Location = new System.Drawing.Point(589, 433);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(115, 40);
+            this.btnPrevious.Size = new System.Drawing.Size(115, 39);
             this.btnPrevious.TabIndex = 31;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -584,8 +689,9 @@
             // 
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Location = new System.Drawing.Point(728, 433);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(115, 40);
+            this.btnNext.Size = new System.Drawing.Size(115, 39);
             this.btnNext.TabIndex = 32;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -595,8 +701,9 @@
             // 
             this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.Location = new System.Drawing.Point(865, 433);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(115, 40);
+            this.btnLast.Size = new System.Drawing.Size(115, 39);
             this.btnLast.TabIndex = 33;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
@@ -606,79 +713,14 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnExit.Location = new System.Drawing.Point(921, 499);
+            this.btnExit.Location = new System.Drawing.Point(921, 498);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(92, 40);
+            this.btnExit.Size = new System.Drawing.Size(92, 39);
             this.btnExit.TabIndex = 34;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // IDUpError
-            // 
-            this.IDUpError.AutoSize = true;
-            this.IDUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDUpError.ForeColor = System.Drawing.Color.White;
-            this.IDUpError.Location = new System.Drawing.Point(100, 61);
-            this.IDUpError.Name = "IDUpError";
-            this.IDUpError.Size = new System.Drawing.Size(57, 15);
-            this.IDUpError.TabIndex = 33;
-            this.IDUpError.Text = "ID Error";
-            // 
-            // IDDelError
-            // 
-            this.IDDelError.AutoSize = true;
-            this.IDDelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDDelError.ForeColor = System.Drawing.Color.White;
-            this.IDDelError.Location = new System.Drawing.Point(132, 159);
-            this.IDDelError.Name = "IDDelError";
-            this.IDDelError.Size = new System.Drawing.Size(57, 15);
-            this.IDDelError.TabIndex = 34;
-            this.IDDelError.Text = "ID Error";
-            // 
-            // NameUpError
-            // 
-            this.NameUpError.AutoSize = true;
-            this.NameUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameUpError.ForeColor = System.Drawing.Color.White;
-            this.NameUpError.Location = new System.Drawing.Point(100, 92);
-            this.NameUpError.Name = "NameUpError";
-            this.NameUpError.Size = new System.Drawing.Size(81, 15);
-            this.NameUpError.TabIndex = 39;
-            this.NameUpError.Text = "Name Error";
-            // 
-            // AgeUpError
-            // 
-            this.AgeUpError.AutoSize = true;
-            this.AgeUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeUpError.ForeColor = System.Drawing.Color.White;
-            this.AgeUpError.Location = new System.Drawing.Point(100, 141);
-            this.AgeUpError.Name = "AgeUpError";
-            this.AgeUpError.Size = new System.Drawing.Size(67, 15);
-            this.AgeUpError.TabIndex = 40;
-            this.AgeUpError.Text = "Age Error";
-            // 
-            // CourseUpError
-            // 
-            this.CourseUpError.AutoSize = true;
-            this.CourseUpError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CourseUpError.ForeColor = System.Drawing.Color.White;
-            this.CourseUpError.Location = new System.Drawing.Point(100, 192);
-            this.CourseUpError.Name = "CourseUpError";
-            this.CourseUpError.Size = new System.Drawing.Size(88, 15);
-            this.CourseUpError.TabIndex = 41;
-            this.CourseUpError.Text = "Course Error";
-            // 
-            // btnUndoDelete
-            // 
-            this.btnUndoDelete.AccessibleName = "";
-            this.btnUndoDelete.Location = new System.Drawing.Point(260, 258);
-            this.btnUndoDelete.Name = "btnUndoDelete";
-            this.btnUndoDelete.Size = new System.Drawing.Size(105, 35);
-            this.btnUndoDelete.TabIndex = 35;
-            this.btnUndoDelete.Text = "Undo ";
-            this.btnUndoDelete.UseVisualStyleBackColor = true;
-            this.btnUndoDelete.Click += new System.EventHandler(this.btnUndoDelete_Click);
             // 
             // DataForm
             // 
@@ -696,6 +738,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.View_Student);
             this.Controls.Add(this.DataGrid);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DataForm";
             this.Text = "DataForm";
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
@@ -723,7 +766,6 @@
         private System.Windows.Forms.Button Generate_Summary;
         private System.Windows.Forms.Button Delete_Student;
         private System.Windows.Forms.Button View_Student;
-        private System.Windows.Forms.TextBox Course;
         private System.Windows.Forms.TextBox Age;
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label5;
@@ -744,7 +786,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox UpdateCourse;
         private System.Windows.Forms.TextBox UpdateAge;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox AverageAge;
@@ -771,5 +812,7 @@
         private System.Windows.Forms.Label CourseUpError;
         private System.Windows.Forms.Label AgeUpError;
         private System.Windows.Forms.Button btnUndoDelete;
+        private System.Windows.Forms.ComboBox cbCourse;
+        private System.Windows.Forms.ComboBox cbUpdateCourse;
     }
 }
